@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEO Pricing Calculator Demo</title>
+    <title>Web Design Pricing Calculator Demo</title>
 
     <!-- Example host-site theme variables -->
     <style>
@@ -83,17 +83,16 @@
 
 <main class="page">
     <section class="content-section">
-        <h1>SEO Pricing Calculator</h1>
+        <h1>Web Design Pricing Calculator</h1>
 
         <p>
-            SEO pricing should never be a mystery. This calculator estimates realistic
+            Web Design pricing should never be a mystery. This calculator estimates realistic
             monthly and one-time investments based on deliverables that directly impact
             search visibility and performance.
         </p>
 
         <p>
-            Adjust content volume, technical SEO, backlinks, and reporting to see how
-            different strategies affect cost. Contract discounts are applied automatically.
+            Adjust to see how different strategies affect cost. Contract discounts are applied automatically.
         </p>
 
         <div class="demo-controls">
@@ -119,7 +118,7 @@
 </main>
 
 <!-- Calculator bundle -->
-<script src="dist/seo-calculator.min.js" defer></script>
+<script src="dist/web-design-calculator.min.js" defer></script>
 
 <!-- Demo logic -->
 <script>
@@ -130,7 +129,7 @@
         function renderCalculator(branding) {
             mount.innerHTML = "";
 
-            const calculator = document.createElement("seo-calculator");
+            const calculator = document.createElement("web-design-calculator");
             calculator.setAttribute("branding", branding);
             calculator.setAttribute("theme", "system");
 

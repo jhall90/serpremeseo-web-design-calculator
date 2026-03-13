@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>SEO Calculator Embed</title>
+    <title>Web Design Calculator Embed</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         body {
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-    <h1>Embed the SEO Pricing Calculator</h1>
+    <h1>Embed the Web Design Pricing Calculator</h1>
 
     <label>
         Branding mode:
@@ -54,12 +54,12 @@
             const branding = brandingSelect.value;
 
             const lines = [
-                '<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-seo-calculator@latest/dist/seo-calculator.min.js"><\/script>',
+                '<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-web-design-calculator@latest/dist/web-design-calculator.min.js"><\/script>',
                 '',
-                '<seo-calculator',
+                '<web-design-calculator',
                 '    branding="' + branding + '"',
                 '    theme="system"',
-                '></seo-calculator>',
+                '></web-design-calculator>',
             ];
 
             textarea.value = lines.join("\n");

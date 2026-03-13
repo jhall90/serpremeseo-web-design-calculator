@@ -20,7 +20,7 @@ src/
 *.map
 
 # Ignore non-minified output
-dist/seo-calculator.js
+dist/web-design-calculator.js
 
 # Logs
 npm-debug.log*

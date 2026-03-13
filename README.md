@@ -1,8 +1,8 @@
 Here is the updated documentation, formatted exactly like your previous version with the consistent use of horizontal rules, bolded callouts, and clean code blocks.
 
-# SERPremeSEO SEO Calculator (For Public Distribution)
+# SERPremeSEO Web Design Calculator (For Public Distribution)
 
-A lightweight, framework-agnostic SEO Pricing Calculator delivered as a Web Component.
+A lightweight, framework-agnostic Web Design Pricing Calculator delivered as a Web Component.
 
 This repository contains only the **compiled, production-ready distribution** of the calculator for embedding on websites, CMS platforms, and client implementations.
 
@@ -14,13 +14,13 @@ The full source code, build system, and development workflow are maintained in a
 
 Fully interactive demo:
 
-https://jhall90.github.io/serpremeseo-seo-calculator/
+https://jhall90.github.io/serpremeseo-web-design-calculator/
 
 ---
 
 ## Features
 
-- Drop-in custom element (`<seo-calculator>`)
+- Drop-in custom element (`<web-design-calculator>`)
 - Works in WordPress, Webflow, Wix, Squarespace, Shopify, or plain HTML
 - No dependencies required
 - Loadable via CDN for simple integration
@@ -35,12 +35,12 @@ https://jhall90.github.io/serpremeseo-seo-calculator/
 After pushing updates to this repository, the calculator may be loaded via CDN.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-seo-calculator@latest/dist/seo-calculator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-web-design-calculator@latest/dist/web-design-calculator.min.js"></script>
 
-<seo-calculator theme="system"></seo-calculator>
+<web-design-calculator theme="system"></web-design-calculator>
 ```
 
-Place the script **before** using the `<seo-calculator>` element.
+Place the script **before** using the `<web-design-calculator>` element.
 
 ---
 
@@ -49,10 +49,10 @@ Place the script **before** using the `<seo-calculator>` element.
 Include the script, then place the custom element anywhere in the document:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-seo-calculator@latest/dist/seo-calculator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-web-design-calculator@latest/dist/web-design-calculator.min.js"></script>
 
 <body>
-    <seo-calculator theme="system"></seo-calculator>
+    <web-design-calculator theme="system"></web-design-calculator>
 </body>
 ```
 
@@ -73,9 +73,9 @@ The calculator supports controlled branding presets depending on your use case.
 **Example:**
 
 ```html
-<seo-calculator
+<web-design-calculator
     branding="minimal"
-    theme="system"></seo-calculator>
+    theme="system"></web-design-calculator>
 ```
 
 ---
@@ -84,23 +84,23 @@ The calculator supports controlled branding presets depending on your use case.
 
 The calculator emits events that you can listen to for analytics, lead scoring, or “intent” tracking.
 
-### seo-calculator:ready
+### web-design-calculator:ready
 
 Fires once after the calculator initializes.
 
 ```javascript
-document.addEventListener("seo-calculator:ready", (e) => {
+document.addEventListener("web-design-calculator:ready", (e) => {
     console.log("Calculator ready:", e.detail);
     // Access e.detail.branding, e.detail.theme, e.detail.version
 });
 ```
 
-### seo-calculator:update
+### web-design-calculator:update
 
 Fires when meaningful calculator inputs change (deduped internally).
 
 ```javascript
-document.addEventListener("seo-calculator:update", (e) => {
+document.addEventListener("web-design-calculator:update", (e) => {
     console.log("Calculator updated:", e.detail);
 
     // Example: capture totals
@@ -119,26 +119,26 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
 
 ### Standard Manual Branding
 
-| Variable                | Description                                    |
-| :---------------------- | :--------------------------------------------- |
-| `theme`                 | Use 'system' unless forcing light or dark mode |
-| `--brand-top`           | Gradient start color for brand elements        |
-| `--brand-bottom`        | Gradient end color for brand elements          |
-| `--chart-onpage`        | Color used for On-Page SEO data segments       |
-| `--chart-tech`          | Color used for Technical SEO data segments     |
-| `--chart-offpage`       | Color used for Off-Page SEO data segments      |
-| `--chart-reporting`     | Color used for Reporting data segments         |
-| `--bg-light`            | Main background color in Light Mode            |
-| `--panel-light`         | Inner card background in Light Mode            |
-| `--text-light`          | Text color in Light Mode                       |
-| `--bg-dark`             | Main background color in Dark Mode             |
-| `--panel-dark`          | Inner card background in Dark Mode             |
-| `--text-dark`           | Text color in Dark Mode                        |
-| `--font-family`         | Typographic family used across the UI          |
-| `--ui-option-font-size` | Font size for dropdowns and inputs             |
+| Variable                | Description                                       |
+| :---------------------- | :------------------------------------------------ |
+| `theme`                 | Use 'system' unless forcing light or dark mode    |
+| `--brand-top`           | Gradient start color for brand elements           |
+| `--brand-bottom`        | Gradient end color for brand elements             |
+| `--chart-onpage`        | Color used for On-Page Web Design data segments   |
+| `--chart-tech`          | Color used for Technical Web Design data segments |
+| `--chart-offpage`       | Color used for Off-Page Web Design data segments  |
+| `--chart-reporting`     | Color used for Reporting data segments            |
+| `--bg-light`            | Main background color in Light Mode               |
+| `--panel-light`         | Inner card background in Light Mode               |
+| `--text-light`          | Text color in Light Mode                          |
+| `--bg-dark`             | Main background color in Dark Mode                |
+| `--panel-dark`          | Inner card background in Dark Mode                |
+| `--text-dark`           | Text color in Dark Mode                           |
+| `--font-family`         | Typographic family used across the UI             |
+| `--ui-option-font-size` | Font size for dropdowns and inputs                |
 
 ```html
-<seo-calculator
+<web-design-calculator
     branding="brand"
     theme="light"
     style="
@@ -149,7 +149,7 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
         --chart-offpage: #B5C4C9;
         --chart-reporting: #94A3B8;
         --font-family: 'Lato', sans-serif;
-    "></seo-calculator>
+    "></web-design-calculator>
 ```
 
 ---
@@ -159,7 +159,7 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
 Use this configuration to automatically sync the calculator with your Elementor Site Settings:
 
 ```html
-<seo-calculator
+<web-design-calculator
     branding="brand"
     theme="system"
     style="
@@ -190,7 +190,7 @@ Use this configuration to automatically sync the calculator with your Elementor 
         /* FONT & SIZE */
         --font-family: var(--e-global-typography-text-font-family, inherit);
         --ui-option-font-size: 13.3333px;
-    "></seo-calculator>
+    "></web-design-calculator>
 ```
 
 ---
@@ -200,9 +200,9 @@ Use this configuration to automatically sync the calculator with your Elementor 
 If you are a publisher or want a neutral embed (no branding or attribution), use:
 
 ```html
-<seo-calculator
+<web-design-calculator
     branding="off"
-    theme="system"></seo-calculator>
+    theme="system"></web-design-calculator>
 ```
 
 ---
@@ -233,7 +233,7 @@ git push origin v1.0.0
 Load a specific version via CDN:
 
 ```
-https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-seo-calculator@v1.0.0/dist/seo-calculator.min.js
+https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-web-design-calculator@v1.0.0/dist/web-design-calculator.min.js
 ```
 
 ---
@@ -243,7 +243,7 @@ https://cdn.jsdelivr.net/gh/jhall90/serpremeseo-seo-calculator@v1.0.0/dist/seo-c
 ```
 /
 ├── dist/
-│   └── seo-calculator.min.js
+│   └── web-design-calculator.min.js
 │
 ├── demo/
 │   └── index.html
