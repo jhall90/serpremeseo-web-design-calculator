@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO Pricing Calculator Demo</title>
+
+    <!-- Example host-site theme variables -->
+    <style>
+        :root {
+            --brand-top: #013740;
+            --brand-bottom: #013740;
+
+            --chart-onpage: #D8724E;
+            --chart-tech: #DFA07F;
+            --chart-offpage: #B5C4C9;
+            --chart-reporting: #94A3B8;
+
+            --font-family: "Lato", sans-serif;
+
+            --bg-light: #F9F9F9;
+            --panel-light: #FFFFFF;
+            --text-light: #013740;
+
+            --bg-dark: #013740;
+            --panel-dark: #2B5C64;
+            --text-dark: #F9F9F9;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            max-width: 70ch;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+
+        .demo-controls {
+            margin-top: 2rem;
+        }
+
+        .demo-controls select {
+            margin-left: 0.5rem;
+            padding: 0.4rem 0.6rem;
+        }
+
+        .calculator-section {
+            margin-top: 3rem;
+        }
+    </style>
+
+    <!-- Demo fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<main class="page">
+    <section class="content-section">
+        <h1>SEO Pricing Calculator</h1>
+
+        <p>
+            SEO pricing should never be a mystery. This calculator estimates realistic
+            monthly and one-time investments based on deliverables that directly impact
+            search visibility and performance.
+        </p>
+
+        <p>
+            Adjust content volume, technical SEO, backlinks, and reporting to see how
+            different strategies affect cost. Contract discounts are applied automatically.
+        </p>
+
+        <div class="demo-controls">
+            <label>
+                Calculator appearance:
+                <select id="brandingSelect">
+                    <option value="brand" selected>Brand</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="off">Off (neutral)</option>
+                </select>
+            </label>
+
+            <p style="max-width: 60ch; margin-top: 0.75rem; opacity: 0.85;">
+                Branding modes control how the calculator visually integrates with a website.
+                Brand adopts site styling, Minimal stays neutral, and Off removes branding entirely.
+            </p>
+
+            <p style="margin-top: 1.5rem; opacity: 0.8;">
+                Want to install this on your site?
+                <a href="demo/embed.html">Get the embed code</a>
+            </p>
+
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div id="calculatorMount"></div>
+    </section>
+</main>
+
+<!-- Calculator bundle -->
+<script src="dist/seo-calculator.min.js" defer></script>
+
+<!-- Demo logic -->
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const mount = document.getElementById("calculatorMount");
+        const brandingSelect = document.getElementById("brandingSelect");
+
+        function renderCalculator(branding) {
+            mount.innerHTML = "";
+
+            const calculator = document.createElement("seo-calculator");
+            calculator.setAttribute("branding", branding);
+            calculator.setAttribute("theme", "system");
+
+            mount.appendChild(calculator);
+        }
+
+        brandingSelect.addEventListener("change", (e) => {
+            renderCalculator(e.target.value);
+        });
+
+        renderCalculator(brandingSelect.value);
+    });
+</script>
+
+</body>
+</html>
