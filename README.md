@@ -124,10 +124,10 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
 | `theme`                 | Use 'system' unless forcing light or dark mode    |
 | `--brand-top`           | Gradient start color for brand elements           |
 | `--brand-bottom`        | Gradient end color for brand elements             |
-| `--chart-onpage`        | Color used for On-Page Web Design data segments   |
-| `--chart-tech`          | Color used for Technical Web Design data segments |
-| `--chart-offpage`       | Color used for Off-Page Web Design data segments  |
-| `--chart-reporting`     | Color used for Reporting data segments            |
+| `--chart-baseline`      | Color used for On-Page Web Design data segments   |
+| `--chart-pages`         | Color used for Technical Web Design data segments |
+| `--chart-content`       | Color used for Off-Page Web Design data segments  |
+| `--chart-addons`     | Color used for Reporting data segments            |
 | `--bg-light`            | Main background color in Light Mode               |
 | `--panel-light`         | Inner card background in Light Mode               |
 | `--text-light`          | Text color in Light Mode                          |
@@ -144,10 +144,10 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
     style="
         --brand-top: #013740;
         --brand-bottom: #2B5C64;
-        --chart-onpage: #D8724E;
-        --chart-tech: #DFA07F;
-        --chart-offpage: #B5C4C9;
-        --chart-reporting: #94A3B8;
+        --chart-baseline: #D8724E;
+        --chart-pages: #DFA07F;
+        --chart-content: #B5C4C9;
+        --chart-addons: #94A3B8;
         --font-family: 'Lato', sans-serif;
     "></web-design-calculator>
 ```
@@ -172,10 +172,10 @@ Use this configuration to automatically sync the calculator with your Elementor 
         --brand-bottom: var(--e-global-color-secondary);
 
         /* CHART COLORS */
-        --chart-onpage: #D8724E;
-        --chart-tech: #DFA07F;
-        --chart-offpage: #B5C4C9;
-        --chart-reporting: #94A3B8;
+        --chart-baseline: #D8724E;
+        --chart-pages: #DFA07F;
+        --chart-content: #B5C4C9;
+        --chart-addons: #94A3B8;
 
         /* UI - LIGHT THEME */
         --bg-light: #F9F9F9;
