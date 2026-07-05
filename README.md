@@ -104,8 +104,9 @@ document.addEventListener("web-design-calculator:update", (e) => {
     console.log("Calculator updated:", e.detail);
 
     // Example: capture totals
-    const monthly = e.detail?.totals?.monthly;
-    const oneTime = e.detail?.totals?.oneTime;
+    const projectTotal = e.detail?.totals?.project;
+    const addOnsTotal = e.detail?.totals?.addOns;
+    const promotionEstimate = e.detail?.totals?.promotion; // %-off promo price
 
     // Send this into your analytics stack (GA4, Meta Pixel, etc.)
 });
@@ -124,10 +125,10 @@ The calculator is styled using CSS Variables. You can pass your brand colors dir
 | `theme`                 | Use 'system' unless forcing light or dark mode    |
 | `--brand-top`           | Gradient start color for brand elements           |
 | `--brand-bottom`        | Gradient end color for brand elements             |
-| `--chart-baseline`      | Color used for On-Page Web Design data segments   |
-| `--chart-pages`         | Color used for Technical Web Design data segments |
-| `--chart-content`       | Color used for Off-Page Web Design data segments  |
-| `--chart-addons`     | Color used for Reporting data segments            |
+| `--chart-baseline`      | Color used for the Baseline chart segment         |
+| `--chart-pages`         | Color used for the Additional Pages chart segment |
+| `--chart-content`       | Color used for the Content chart segment          |
+| `--chart-addons`        | Color used for the Add-Ons chart segment          |
 | `--bg-light`            | Main background color in Light Mode               |
 | `--panel-light`         | Inner card background in Light Mode               |
 | `--text-light`          | Text color in Light Mode                          |
